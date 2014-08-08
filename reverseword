@@ -1,0 +1,44 @@
+import java.io.*;
+import java.util.*;
+public class test {
+
+	/**
+	 * @param args
+	 */
+	public static void main(String[] args) throws IOException{
+		// TODO Auto-generated method stub
+		// create an array list
+	      ArrayList<String> al = new ArrayList<String>();
+	      ArrayList<String> reverseal=new ArrayList<String>();
+	      
+	      BufferedReader bf = new BufferedReader(new InputStreamReader (System.in)); 
+	      int n,i;
+	      String s;
+	      n=Integer.parseInt(bf.readLine());
+	      for ( i=n-1;i>=0;i--)
+	      {
+	    	  s=bf.readLine();
+	    	  al.add(s);
+	    	  
+	      }
+	     
+	    
+	      for (i=0;i<=n-1;i++)
+	      {   
+	    	  
+	    	  String str = al.get(i);
+	     	  StringBuilder sb = new StringBuilder(str.length()+1);
+		      String[] words=str.split(" ");
+		      
+		      for (int j = words.length-1;j>=0;j--)
+		      sb.append(words[j]).append(' ');
+		      sb.setLength(sb.length()-1);
+		      reverseal.add(i,sb.toString());
+	      
+	      System.out.print("\nCase#");
+	      System.out.print(i);
+	      System.out.print(":");
+	      }
+	}
+
+}
