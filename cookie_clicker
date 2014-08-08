@@ -1,0 +1,30 @@
+import java.io.*;
+
+
+public class cookie_problem {
+
+	/**
+	 * @param args
+	 */
+	public static void main(String[] args) throws IOException{
+		// TODO Auto-generated method stub
+		double c;
+		double x; double f; 
+		
+		int farm,current = 0;
+
+		BufferedReader bf = new BufferedReader(new InputStreamReader (System.in)); 
+		c=Double.parseDouble(bf.readLine());
+		f=Double.parseDouble(bf.readLine());
+		x=Double.parseDouble(bf.readLine());
+		double x1 =x/2;
+		for(farm=0;current<x1;farm++)
+		{
+			current += c/(2+farm*f);
+			x1 = Math.min(x1, current+x/(2+(farm+1)*f));
+		}
+		System.out.printf("%.7f",x1);
+
+	}
+
+}
