@@ -1,0 +1,36 @@
+import java.io.*;
+public class reverseword {
+
+	/**
+	 * @param args
+	 */
+	public static void reverse(String str)
+	{
+		StringBuilder sb = new StringBuilder(str.length()+1);
+		String[] words=str.split(" ");
+		for (int i = words.length-1;i>=0;i--)
+			sb.append(words[i]).append(' ');
+		sb.setLength(sb.length()-1);
+		System.out.println(sb.toString());
+	}
+
+	public static void main(String[] args) throws IOException {
+		// TODO Auto-generated method stub
+		System.out.println("Enter the no of cases you want to reverse:");
+		BufferedReader bf = new BufferedReader(new InputStreamReader (System.in)); 
+		int n=Integer.parseInt(bf.readLine());
+		while (n!=0)
+		{
+			System.out.println("Enter a sentence to reverse:");
+			String s = bf.readLine();
+			
+		
+			if (s.isEmpty())
+			System.out.println("empty strings cannot be reversed");
+			else
+	        reverse(s);	
+			n--;
+		}
+		}
+
+}
